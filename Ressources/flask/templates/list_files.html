@@ -1,0 +1,21 @@
+<!-- templates/list_files.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transparency Folder</title>
+    <!-- include any other necessary head elements -->
+</head>
+<body>
+    <h1>Transparency Folder</h1>
+    <ul>
+        {% for file in files %}
+            <li>
+                <a href="{{ file.path }}" target="_blank">{{ file.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Back to Dashboard</a>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Evaluation Form</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        form {
+            width: 60%;
+            text-align: center;
+        }
+        .question {
+            margin: 20px 0;
+        }
+        input[type=range] {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .btn {
+            border-radius: 50px;
+        }
+        .range-labels {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 10px;
+        }
+        .range-label {
+            flex: 1;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <form id="evaluationForm" action="{{ url_for('evaluation') }}" method="post">
+        <h2>Evaluation Form for Student: {{ student_name }}</h2>
+        <div class="question">
+            <label for="question1">2. How was his participation in class ?</label>
+            <input type="range" id="question1" name="question1" min="1" max="5">
+            <div class="range-labels">
+                <span class="range-label">1</span>
+                <span class="range-label">2</span>
+                <span class="range-label">3</span>
+                <span class="range-label">4</span>
+                <span class="range-label">5</span>
+            </div>
+        </div>
+        <div class="question">
+            <label for="question1">2. Did he contributed good quality results</label>
+            <input type="range" id="question2" name="question2" min="1" max="5">
+            <div class="range-labels">
+                <span class="range-label">1</span>
+                <span class="range-label">2</span>
+                <span class="range-label">3</span>
+                <span class="range-label">4</span>
+                <span class="range-label">5</span>
+            </div>
+        </div>
+        <div class="question">
+            <label for="question1">3. Did he not talked to other people or disrupted the lecture ?</label>
+            <input type="range" id="question3" name="question3" min="1" max="5">
+            <div class="range-labels">
+                <span class="range-label">1</span>
+                <span class="range-label">2</span>
+                <span class="range-label">3</span>
+                <span class="range-label">4</span>
+                <span class="range-label">5</span>
+            </div>
+        </div>
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary btn-block my-3 rounded-pill">Next Student</button>
+            <a href="{{ url_for('upload') }}" class="btn btn-secondary btn-block rounded-pill">Switch to Upload</a>
+        </div>
+    </form>
+
+    
+</body>
+</html>
